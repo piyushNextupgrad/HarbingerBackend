@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 mongoose
   .connect(
-    "mongodb+srv://Piyush:Piyush@cluster0.akvcs4v.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://Piyush:Piyush@cluster0.akvcs4v.mongodb.net/harbinger?retryWrites=true&w=majority"
   )
   .then((result) => console.log("connected"))
   .catch((err) => console.log(err));
