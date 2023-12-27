@@ -15,7 +15,8 @@ const postImage = async (req, res) => {
     // You can now use req.files['image1'][0].path to get the path of the uploaded file
 
     const image1 =
-      "http://localhost:5000/uploads/" + req.files["image1"][0].filename;
+      "https://harbinger-backend.onrender.com/uploads/" +
+      req.files["image1"][0].filename;
 
     const record = new section1Model({
       imagePath: image1,
@@ -61,7 +62,8 @@ const putData = async (req, res) => {
     console.log("req.body", req.body.id);
     if (req.files["image1"]) {
       const image1 =
-        "http://localhost:5000/uploads/" + req.files["image1"][0]?.filename;
+        "https://harbinger-backend.onrender.com/uploads/" +
+        req.files["image1"][0]?.filename;
       const data = await section1Model.findByIdAndUpdate(req.body.id, {
         imagePath: image1,
         keyName: req.body.keyName,

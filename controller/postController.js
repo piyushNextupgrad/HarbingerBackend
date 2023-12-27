@@ -2,7 +2,8 @@ const postModel = require("../model/postModel");
 const postData = async (req, resp) => {
   try {
     const postImage =
-      "http://localhost:5000/uploads/" + req.files["articleMedia"][0].filename;
+      "https://harbinger-backend.onrender.com/uploads/" +
+      req.files["articleMedia"][0].filename;
     const post = new postModel({
       authorName: req.body.authorName,
 
@@ -35,7 +36,7 @@ const putData = async (req, resp) => {
     if (req?.files?.articleMedia?.length > 0) {
       // console.log("With media");
       const postImage =
-        "http://localhost:5000/uploads/" +
+        "https://harbinger-backend.onrender.com/uploads/" +
         req.files["articleMedia"][0].filename;
 
       data = await postModel.findByIdAndUpdate(req.body.id, {
