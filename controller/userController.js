@@ -21,7 +21,7 @@ async function postUser(req, resp) {
 
 async function getUser(req, resp) {
   try {
-    const data = await userModel.findById(req.body.id);
+    const data = await userModel.find({});
 
     resp.json({ success: true, msg: "user found", data: data });
   } catch (err) {
