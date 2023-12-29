@@ -69,9 +69,11 @@ const putData = async (req, res) => {
         keyName: req.body.keyName,
         link: req.body.link,
       });
+      console.log("result", data);
     } else {
       const data = await section1Model.findByIdAndUpdate(req.body.id, {
         keyName: req.body.keyName,
+        link: req.body.link,
       });
     }
 
