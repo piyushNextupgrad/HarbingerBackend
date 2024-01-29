@@ -1,4 +1,5 @@
 const section3Model = require("../model/section3model");
+require("dotenv").config();
 const postData = async (req, resp) => {
   try {
     const section = new section3Model({

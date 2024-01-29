@@ -3,6 +3,7 @@ const path = require("path");
 const express = require("express");
 const mongoose = require("mongoose");
 var cors = require("cors");
+const { verifyToken } = require("./middlewares/middlewares");
 
 //.........................
 

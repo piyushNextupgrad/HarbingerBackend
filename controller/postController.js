@@ -1,9 +1,9 @@
 const postModel = require("../model/postModel");
+require("dotenv").config();
 const postData = async (req, resp) => {
   try {
     const postImage =
-      "https://harbinger-backend.onrender.com/uploads/" +
-      req.files["articleMedia"][0].filename;
+      process.env.SITEURL + "/uploads/" + req.files["articleMedia"][0].filename;
     const post = new postModel({
       authorName: req.body.authorName,
 
@@ -36,7 +36,8 @@ const putData = async (req, resp) => {
     if (req?.files?.articleMedia?.length > 0) {
       // console.log("With media");
       const postImage =
-        "https://harbinger-backend.onrender.com/uploads/" +
+        process.env.SITEURL +
+        "/uploads/" +
         req.files["articleMedia"][0].filename;
 
       data = await postModel.findByIdAndUpdate(req.body.id, {

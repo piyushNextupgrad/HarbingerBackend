@@ -1,5 +1,6 @@
 const userModel = require("../model/userModel");
 var jwt = require("jsonwebtoken");
+require("dotenv").config();
 const { generateToken } = require("../middlewares/middlewares");
 
 async function postUser(req, resp) {
